@@ -4,13 +4,13 @@ from flask import jsonify, request, url_for, redirect, abort
 import json
 from backend.model import storage
 
-@app_views.route('/yourinfo', methods=['GET', 'POST'])
+@app_views.route('/allinfo', methods=['GET', 'POST'])
 def your_info():
   if request.method == 'POST':
     req_data = json.loads(request.data)
     return_id = storage.new(req_data)
     storage.save()
-    return redirect(url_for('app_views.info_with_id', info_id = str(return_id)))
+    return redirect(url_for('app_views.info_with_id', info_id = str(return_id))), 302
   elif request.method == 'GET':
     all_objs = storage.all()
     return jsonify(all_objs), 200
@@ -18,7 +18,7 @@ def your_info():
     return jsonify({"Error": "Your Missing something"}), 404
 
 
-@app_views.route('/yourinfo/post/<info_id>', methods=['GET', 'DELETE', 'PUT'])
+@app_views.route('/allinfo/info/<info_id>', methods=['GET', 'DELETE', 'PUT'])
 def info_with_id(info_id=None):
   info_obj = storage.get(info_id)
   if info_obj is None:

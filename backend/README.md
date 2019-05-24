@@ -25,33 +25,33 @@
 * ORM
 * OOP
 
-### How to run backend
+#### How to run backend
 ```PROFILE_USER=root PROFILE_PASSWORD=root PROFILE_HOST=localhost PROFILE_PORT=3306 PROFILE_DATABASE=user python3 -m backend.api.app```
 
 ### API
 
-#### Retrieve my profile information in JSON instead of resume download
+#### Retrieve my profile information in JSON format instead of resume download
 `GET  /api/myinfo`
 
-#### Retrieve all posts
-`GET /api/yourinfo` 
+#### Retrieve all outside posted contact information
+`GET /api/allinfo` 
 
-#### Send contact information and message in JSON to online database
+#### Send your contact information and message in JSON to online database, I will contact you ASAP!
 Example Format: 
 `{"name": "First Last", "title": "Senior Recruiter", "company": "Random Company", "email": "random@email.com", "phone": "123-456-7890", "note": "Hello, I like to speak with you for possible...."}`
 
-`POST /api/yourinfo` 
+`POST /api/allinfo` 
 
-#### Retrieve post by id
-`GET /api/yourinfo/post/ <--id#` 
+#### Retrieve existing info by id
+`GET /api/allinfo/info/ <--id#` 
 
-#### Update post by id
-`PUT /api/yourinfo/post/ <--id#` 
+#### Update existing info by id. Important: You can update any fields besides "ID"
+`PUT /api/allinfo/info/ <--id#` 
 
 #### Delete post by id
-`DELETE /api/yourinfo/post/ <--id#` 
+`DELETE /api/allinfo/info/ <--id#` 
 
-## EXTRA Commands
+#### EXTRA Commands
 `pip3 freeze > requirements.txt`
 
 or
