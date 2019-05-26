@@ -1,14 +1,3 @@
-# FLASK REACT PORTFOLIO SITE
----
-## Frontend
----
-## Stack
-* React
-* HTML
-* CSS
-* Javascript
-* jQuery
-
 ---
 ## Backend
 ---

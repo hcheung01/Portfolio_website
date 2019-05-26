@@ -3,8 +3,10 @@ from backend.api.views import app_views
 from flask import jsonify, request, url_for, redirect, abort
 import json
 from backend.model import storage
+from flask_cors import CORS, cross_origin
 
 @app_views.route('/allinfo', methods=['GET', 'POST'])
+@cross_origin(supports_credentials=True)
 def your_info():
   if request.method == 'POST':
     req_data = json.loads(request.data)
@@ -18,7 +20,7 @@ def your_info():
     return jsonify({"Error": "Your Missing something"}), 404
 
 
-@app_views.route('/allinfo/info/<info_id>', methods=['GET', 'DELETE', 'PUT'])
+@app_views.route('/info/<info_id>', methods=['GET', 'DELETE', 'PUT'])
 def info_with_id(info_id=None):
   info_obj = storage.get(info_id)
   if info_obj is None:
