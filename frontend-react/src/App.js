@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import InfoForm from './components/infoform';
 import Infos from './components/infos';
-// import Icon from '@material-ui/core/Icon';
-// import IconButton from '@material-ui/core/IconButton';
-// import SvgIcon from '@material-ui/core/SvgIcon';
 
 class App extends Component {
   constructor(props) {
@@ -18,21 +15,21 @@ class App extends Component {
   render() {
     return (
       <div className="Info">
-        <InfoForm></InfoForm>
+        <InfoForm getInfo={this.getInfo.bind(this)}/>
         <Infos infos={this.state.items} />
       </div>
     );
   }
   componentDidMount() {
     this.getInfo();
-    this.interval = setInterval(this.getInfo, 1000);
+    // this.interval = setInterval(this.getInfo, 10000);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.interval);
+  // }
   getInfo = () => {
-    fetch("http://localhost:5000/api/allinfo")
+    fetch("/api/allinfo")
       .then(response => response.json())
       .then(data =>
         this.setState({
