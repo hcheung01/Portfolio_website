@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import InfoItem from "./infoItem";
-// import PropTypes from 'prop-types';
-// import Icon from '@material-ui/core/Icon';
-// import IconButton from "@material-ui/core/IconButton";
-// import SvgIcon from "@material-ui/core/SvgIcon";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class InfoForm extends Component {
-  constructor() {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
       name: '',
       title: '',
@@ -15,93 +12,149 @@ class InfoForm extends Component {
       email: '',
       phone: '',
       note: '',
-    }
+      id: ''
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
+  handlePost (event) {
     this.setState({
-      [event.target.name]: event.target.value
-    })
+      [event.target.name]: event
+    });
   }
 
-  handleSubmit(event) {
+  handleChange (event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
+  handleSubmit (event) {
     event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value
     });
 
-    if (this.state.name && this.state.title && this.state.company && this.state.email) {
-      fetch("http://localhost:5000/api/allinfo", {
-        method: "POST",
+    if (this.state.name && this.state.title && this.state.id === '') {
+      delete this.state.id;
+      fetch('/api/allinfo', {
+        method: 'POST',
         body: JSON.stringify(this.state),
-       headers: {
-          "Content-Type": "application/json"
+        headers: {
+          'Content-Type': 'application/json'
         }
-      }).then(results => {
-        return results.json();
-      }).then(data => {
-        this.props.getInfo()
-      });
+      })
+        .then(results => {
+          return results.json();
+        })
+        .then(data => {
+          this.props.getInfo();
+        });
+    } else if (this.state.name && this.state.title && this.state.id !== '') {
+      console.log(this.state);
+      fetch('/api/info/' + this.state.id, {
+        method: 'PUT',
+        body: JSON.stringify(this.state),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(results => {
+          return results.json();
+        })
+        .then(data => {
+          this.props.getInfo();
+        });
     }
   }
-  formStyle = {
-    display: "flex",
-    flexDirection: "column",
-    textAlign: 'left',
-    width: "100%",
-  };
-  render() {
+  render () {
     return (
-      <form onSubmit={this.handleSubmit} style={this.formStyle}>
-        <label htmlFor="name">Name:</label>
-        <input
+      <form onSubmit={this.handleSubmit}>
+        <TextField
+          label='name'
           onChange={this.handleChange}
-          name="name"
-          type="text"
+          margin='normal'
+          variant='outlined'
+          value={this.state.name}
         />
-
-        <label htmlFor="title">Title:</label>
-        <input
+        <TextField
+          label='title'
           onChange={this.handleChange}
-          name="title"
-          type="text"
+          margin='normal'
+          variant='outlined'
         />
-
-        <label htmlFor="company">Company:</label>
-        <input
+        <TextField
+          label='company'
           onChange={this.handleChange}
-          name="company"
-          type="text"
+          margin='normal'
+          variant='outlined'
         />
-
-        <label htmlFor="email">Email:</label>
-        <input
+        <TextField
+          label='email'
           onChange={this.handleChange}
-          name="email"
-          type="email"
+          margin='normal'
+          variant='outlined'
         />
-
-        <label htmlFor="phone">Phone:</label>
-        <input
+        <TextField
+          label='phone'
           onChange={this.handleChange}
-          name="phone"
-          type="phone"
+          margin='normal'
+          variant='outlined'
         />
-
-        <label htmlFor="note">Leave me a note:</label>
-        <input
+        <TextField
+          label='note'
           onChange={this.handleChange}
-          name="note"
-          type="note"
+          margin='normal'
+          variant='outlined'
         />
-
-        <button>Send Data!</button>
+        <TextField
+          label='id'
+          onChange={this.handleChange}
+          margin='normal'
+          variant='outlined'
+        />
+        <Button
+          variant='outlined'
+          component='span'
+          style={{ margin: 'spacing(1)' }}
+          size='large'
+        >
+            Upload Data!!
+        </Button>
       </form>
     );
   }
 }
 
+//   render () {
+//     return (
+//       <form onSubmit={this.handleSubmit} style={this.formStyle}>
+//         <label htmlFor='name'>Name:</label>
+//         <input onChange={this.handleChange} name='name' type='text' />
+
+//         <label htmlFor='title'>Title:</label>
+//         <input onChange={this.handleChange} name='title' type='text' />
+
+//         <label htmlFor='company'>Company:</label>
+//         <input onChange={this.handleChange} name='company' type='text' />
+
+//         <label htmlFor='email'>Email:</label>
+//         <input onChange={this.handleChange} name='email' type='email' />
+
+//         <label htmlFor='phone'>Phone(optional):</label>
+//         <input onChange={this.handleChange} name='phone' type='phone' />
+
+//         <label htmlFor='note'>Leave me a note(optional):</label>
+//         <input onChange={this.handleChange} name='note' type='note' />
+
+//         <label htmlFor='note'>ID(optional) for updates only:</label>
+//         <input onChange={this.handleChange} name='id' type='id' />
+
+//         <button>Send Data!</button>
+//       </form>
+//     );
+//   }
+// }
 
 export default InfoForm;

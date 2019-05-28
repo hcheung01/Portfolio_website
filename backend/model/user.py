@@ -19,7 +19,7 @@ class User(Base):
   company = Column(String(60), nullable=True)
   email = Column(String(120), nullable=True)
   phone = Column(String(25), nullable=True)
-  note = Column(String(300), nullable=True)
+  note = Column(String(3000), nullable=True)
   
   def __repr__(self):
      return "<User(name='{}', title='{}', company='{}', email='{}', phone='{}', note='{}', created_at='{}')>".\

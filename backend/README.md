@@ -14,7 +14,10 @@
 * ORM
 * OOP
 
-#### How to run backend
+#### Start MYSQL server
+```/usr/local/mysql/bin/mysql -uroot -p```
+
+#### How to start API/Backend
 ```PROFILE_USER=root PROFILE_PASSWORD=root PROFILE_HOST=localhost PROFILE_PORT=3306 PROFILE_DATABASE=user python3 -m backend.api.app```
 
 ### API

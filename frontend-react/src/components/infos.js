@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import InfoItem from './infoItem';
 import PropTypes from 'prop-types';
 import List from '@material-ui/core/List';
-import { ThemeProvider } from '@material-ui/styles';
 
 const theStyle = {
   width: '90%',
@@ -10,10 +9,25 @@ const theStyle = {
   backgroundColor: 'paper'
 };
 class Infos extends Component {
+  constructor (props) {
+    super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+  handleDelete (id) {
+    fetch('/api/info/' + id, {
+      method: 'DELETE'
+    })
+      .then(results => {
+        return results.json();
+      })
+      .then(data => {
+        this.props.getInfo();
+      });
+  }
   render () {
     return this.props.infos.map(info => (
       <List dense style={theStyle}>
-        <InfoItem key={info.id} info={info} />
+        <InfoItem handleDelete={this.handleDelete} key={info.id} info={info} />
       </List>
     ));
   }

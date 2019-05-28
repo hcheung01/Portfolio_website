@@ -16,18 +16,14 @@ class App extends Component {
     return (
       <div className="Info">
         <InfoForm getInfo={this.getInfo.bind(this)}/>
-        <Infos infos={this.state.items} />
+        <Infos getInfo={this.getInfo.bind(this)} infos={this.state.items} />
       </div>
+
     );
   }
   componentDidMount() {
     this.getInfo();
-    // this.interval = setInterval(this.getInfo, 10000);
   }
-
-  // componentWillUnmount() {
-  //   clearInterval(this.interval);
-  // }
   getInfo = () => {
     fetch("/api/allinfo")
       .then(response => response.json())
