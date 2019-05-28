@@ -63,7 +63,7 @@ function InfoItem (props) {
             {props.info.created_at}
           </Typography>
           <Typography variant='body2' color='textSecondary' component='p'>
-            {'The ID number for this post is ' + props.info.id}
+            {'POST ID# - ' + props.info.id}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>

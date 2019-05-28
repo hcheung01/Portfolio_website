@@ -25,6 +25,7 @@ class InfoForm extends Component {
   }
 
   handleChange (event) {
+    console.log(this.state);
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -36,7 +37,7 @@ class InfoForm extends Component {
       [event.target.name]: event.target.value
     });
 
-    if (this.state.name && this.state.title && this.state.id === '') {
+    if (this.state.name && this.state.title && !this.state.id) {
       delete this.state.id;
       fetch('/api/allinfo', {
         method: 'POST',
@@ -51,7 +52,7 @@ class InfoForm extends Component {
         .then(data => {
           this.props.getInfo();
         });
-    } else if (this.state.name && this.state.title && this.state.id !== '') {
+    } else if (this.state.name && this.state.title && this.state.id) {
       console.log(this.state);
       fetch('/api/info/' + this.state.id, {
         method: 'PUT',
@@ -73,44 +74,43 @@ class InfoForm extends Component {
       <form onSubmit={this.handleSubmit}>
         <TextField
           label='name'
-          onChange={this.handleChange}
+          onChange={e => this.setState({ name: e.target.value })}
           margin='normal'
           variant='outlined'
-          value={this.state.name}
         />
         <TextField
           label='title'
-          onChange={this.handleChange}
+          onChange={e => this.setState({ title: e.target.value })}
           margin='normal'
           variant='outlined'
         />
         <TextField
           label='company'
-          onChange={this.handleChange}
+          onChange={e => this.setState({ company: e.target.value })}
           margin='normal'
           variant='outlined'
         />
         <TextField
           label='email'
-          onChange={this.handleChange}
+          onChange={e => this.setState({ email: e.target.value })}
           margin='normal'
           variant='outlined'
         />
         <TextField
           label='phone'
-          onChange={this.handleChange}
+          onChange={e => this.setState({ phone: e.target.value })}
           margin='normal'
           variant='outlined'
         />
         <TextField
           label='note'
-          onChange={this.handleChange}
+          onChange={e => this.setState({ note: e.target.value })}
           margin='normal'
           variant='outlined'
         />
         <TextField
           label='id'
-          onChange={this.handleChange}
+          onChange={e => this.setState({ id: e.target.value })}
           margin='normal'
           variant='outlined'
         />
@@ -119,8 +119,10 @@ class InfoForm extends Component {
           component='span'
           style={{ margin: 'spacing(1)' }}
           size='large'
+          // type='submit'
+          onClick={this.handleSubmit}
         >
-            Upload Data!!
+          Upload Data!!
         </Button>
       </form>
     );
