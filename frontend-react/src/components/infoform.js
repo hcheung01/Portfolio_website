@@ -129,34 +129,4 @@ class InfoForm extends Component {
   }
 }
 
-//   render () {
-//     return (
-//       <form onSubmit={this.handleSubmit} style={this.formStyle}>
-//         <label htmlFor='name'>Name:</label>
-//         <input onChange={this.handleChange} name='name' type='text' />
-
-//         <label htmlFor='title'>Title:</label>
-//         <input onChange={this.handleChange} name='title' type='text' />
-
-//         <label htmlFor='company'>Company:</label>
-//         <input onChange={this.handleChange} name='company' type='text' />
-
-//         <label htmlFor='email'>Email:</label>
-//         <input onChange={this.handleChange} name='email' type='email' />
-
-//         <label htmlFor='phone'>Phone(optional):</label>
-//         <input onChange={this.handleChange} name='phone' type='phone' />
-
-//         <label htmlFor='note'>Leave me a note(optional):</label>
-//         <input onChange={this.handleChange} name='note' type='note' />
-
-//         <label htmlFor='note'>ID(optional) for updates only:</label>
-//         <input onChange={this.handleChange} name='id' type='id' />
-
-//         <button>Send Data!</button>
-//       </form>
-//     );
-//   }
-// }
-
 export default InfoForm;
