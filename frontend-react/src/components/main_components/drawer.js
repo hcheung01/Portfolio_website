@@ -11,6 +11,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Infos from '../infos';
+import InfoForm from '../infoform';
 
 const useStyles = makeStyles({
   list: {
@@ -46,7 +48,7 @@ function TemporaryDrawer () {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['About', 'Projects', 'Education', 'My Info', 'Post Your Info', 'Contact'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}

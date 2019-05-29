@@ -6,7 +6,9 @@ import List from '@material-ui/core/List';
 const theStyle = {
   width: '90%',
   maxWidth: '100%',
-  backgroundColor: 'paper'
+  backgroundColor: 'paper',
+  display: 'flex',
+  flexDirection: 'column'
 };
 class Infos extends Component {
   constructor (props) {

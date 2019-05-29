@@ -119,7 +119,6 @@ class InfoForm extends Component {
           component='span'
           style={{ margin: 'spacing(1)' }}
           size='large'
-          // type='submit'
           onClick={this.handleSubmit}
         >
           Upload Data!!
