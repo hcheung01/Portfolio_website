@@ -5,6 +5,7 @@ import Infos from './components/infos';
 import ButtonAppBar from './components/main_components/header';
 import StickyFooter from './components/main_components/footer';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
