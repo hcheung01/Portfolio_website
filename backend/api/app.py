@@ -70,4 +70,4 @@ if __name__ == "__main__":
     # initializes global error handling
     # setup_global_errors()
     # start Flask app
-    app.run(host='localhost', port='5000', debug=True)
+    app.run(host='localhost', port='3001', debug=True)

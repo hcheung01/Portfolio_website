@@ -13,7 +13,6 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DeleteIcon from '@material-ui/icons/Delete';
-
 import { ListItem } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
@@ -42,9 +41,8 @@ function InfoItem (props) {
   function handleExpandClick () {
     setExpanded(!expanded);
   }
-
   return (
-    <ListItem>
+    <ListItem key={props.info.id}>
       <Card className={classes.card}>
         <CardHeader
           action={
@@ -86,7 +84,7 @@ function InfoItem (props) {
 
         <Collapse in={expanded} timeout='auto' unmountOnExit>
           <CardContent>
-            <Typography paragraph>{'Note: ' + props.info.note}</Typography>
+            <Typography paragraph>{'note: ' + props.info.note}</Typography>
           </CardContent>
         </Collapse>
       </Card>

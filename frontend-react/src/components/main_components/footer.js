@@ -9,9 +9,7 @@ function MadeWithLove () {
   return (
     <Typography variant='body2' color='textSecondary'>
       {'Built with love by the '}
-      <Link color='inherit' href='https://material-ui.com/'>
-        Material-UI
-      </Link>
+      <Link color='inherit' href='https://material-ui.com/' />
       {' team.'}
     </Typography>
   );
@@ -30,7 +28,8 @@ const useStyles = makeStyles(theme => ({
   footer: {
     padding: theme.spacing(2),
     marginTop: 'auto',
-    color: 'white'
+    color: 'white',
+    background: '#292929'
   }
 }));
 
@@ -41,19 +40,19 @@ export default function StickyFooter () {
     <div className={classes.root}>
       <CssBaseline />
       <Container component='main' className={classes.main} maxWidth='sm'>
-        <Typography variant='h2' component='h1' gutterBottom>
+        {/* <Typography variant='h2' component='h1' gutterBottom>
           Sticky footer
-        </Typography>
-        <Typography variant='h5' component='h2' gutterBottom>
+        </Typography> */}
+        {/* <Typography variant='h5' component='h2' gutterBottom>
           {'Pin a footer to the bottom of the viewport.'}
           {'The footer will move as the main element of the page grows.'}
-        </Typography>
-        <Typography variant='body1'>Sticky footer placeholder.</Typography>
+        </Typography> */}
+        {/* <Typography variant='body1'>Sticky footer placeholder.</Typography> */}
       </Container>
       <footer className={classes.footer}>
         <Container maxWidth='sm'>
           <Typography variant='body1'>
-            copyright @heindrickcheung
+            copyright @Heindrick Cheung
           </Typography>
           <MadeWithLove />
         </Container>

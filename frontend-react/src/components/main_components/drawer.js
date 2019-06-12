@@ -1,18 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Infos from '../infos';
-import InfoForm from '../infoform';
+
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles({
   list: {
@@ -20,6 +16,11 @@ const useStyles = makeStyles({
   },
   fullList: {
     width: 'auto'
+  },
+  side: {
+    background: '#292929',
+    color: 'white',
+    height: '99.95vh'
   }
 });
 
@@ -47,27 +48,14 @@ function TemporaryDrawer () {
       onClick={toggleDrawer(side, false)}
       onKeyDown={toggleDrawer(side, false)}
     >
-      <List>
-        {['About', 'Projects', 'Education', 'My Info', 'Post Your Info', 'Contact'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
+      <List className={classes.side}>
+        {['Home', 'Resume', 'My Information', 'Your Information'].map((text, index) => (
+          <ListItem button key={index} component={Link} to={'/' + text.toLowerCase().replace(/ /g, '')}>
             <ListItemText primary={text} />
           </ListItem>
         ))}
       </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
   return (

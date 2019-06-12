@@ -6,9 +6,10 @@ import List from '@material-ui/core/List';
 const theStyle = {
   width: '90%',
   maxWidth: '100%',
-  backgroundColor: 'paper',
   display: 'flex',
-  flexDirection: 'column'
+  // justifyContent: 'space-around',
+  flexWrap: 'wrap',
+  overflow: 'hidden'
 };
 class Infos extends Component {
   constructor (props) {
@@ -16,7 +17,7 @@ class Infos extends Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   handleDelete (id) {
-    fetch('/api/info/' + id, {
+    fetch('/info/' + id, {
       method: 'DELETE'
     })
       .then(results => {
@@ -27,9 +28,9 @@ class Infos extends Component {
       });
   }
   render () {
-    return this.props.infos.map(info => (
+    return this.props.infos.map((info, index) => (
       <List dense style={theStyle}>
-        <InfoItem handleDelete={this.handleDelete} key={info.id} info={info} />
+        <InfoItem handleDelete={this.handleDelete} info={info} />
       </List>
     ));
   }
