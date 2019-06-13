@@ -11,52 +11,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.devicon-github-plain-wordmark {
+  font-size: 4rem
+}
 .devicon-react-original-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-javascript-plain {
-  font-size: 5rem
+  font-size: 4rem
+}
+.devicon-amazonwebservices-original {
+  font-size: 4rem
 }
 .devicon-python-plain-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-nodejs-plain-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-html5-plain-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-css3-plain-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-mysql-plain-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-c-plain {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-express-original-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-bootstrap-plain-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-git-plain-wordmark {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-jquery-plain {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-linux-plain {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-nginx-original {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-ubuntu-plain {
-  font-size: 5rem
+  font-size: 4rem
 }
 .devicon-visualstudio-plain {
-  font-size: 5rem
+  font-size: 4rem
 }
+
+

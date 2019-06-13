@@ -7,8 +7,9 @@ import pic from './profilepic.jpg';
 const useStyles = makeStyles({
   bigAvatar: {
     margin: 10,
-    width: 160,
-    height: 160
+    width: 200,
+    height: 200,
+    marginBottom: 30
   }
 });
 

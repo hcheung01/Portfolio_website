@@ -49,7 +49,7 @@ function TemporaryDrawer () {
       onKeyDown={toggleDrawer(side, false)}
     >
       <List className={classes.side}>
-        {['Home', 'Resume', 'My Information', 'Your Information'].map((text, index) => (
+        {['Home', 'Resume', 'API documentation', 'Your Information'].map((text, index) => (
           <ListItem button key={index} component={Link} to={'/' + text.toLowerCase().replace(/ /g, '')}>
             <ListItemText primary={text} />
           </ListItem>

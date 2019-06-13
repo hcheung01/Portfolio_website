@@ -7,10 +7,10 @@ import Link from '@material-ui/core/Link';
 
 function MadeWithLove () {
   return (
-    <Typography variant='body2' color='textSecondary'>
+    <Typography variant='body2'>
       {'Built with love by the '}
       <Link color='inherit' href='https://material-ui.com/' />
-      {' team.'}
+      {' team Heindrick.'}
     </Typography>
   );
 }
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh'
+    minHeight: '70vh'
   },
   main: {
     marginTop: theme.spacing(8),
@@ -52,7 +52,7 @@ export default function StickyFooter () {
       <footer className={classes.footer}>
         <Container maxWidth='sm'>
           <Typography variant='body1'>
-            copyright @Heindrick Cheung
+            copyright 2019
           </Typography>
           <MadeWithLove />
         </Container>
