@@ -10,7 +10,6 @@ import ImageAvatars from '../avatar';
 import Hidden from '@material-ui/core/Hidden';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const useStyles = makeStyles(theme => ({
@@ -31,9 +30,15 @@ const useStyles = makeStyles(theme => ({
     color: '#3F51B5'
   },
   svg: {
-    fill: 'currentColor'
+    fill: 'currentColor',
+    paddingBottom: '15px'
   }
 }));
+
+const url = {
+  url1: 'www.google.com',
+  url2: 'www.linkedin.com/heindrick-cheung'
+};
 
 function ButtonAppBar () {
   const classes = useStyles();
@@ -51,7 +56,7 @@ function ButtonAppBar () {
           </Button>
           <HomeIcon img href='/home' />
         </Toolbar>
-        <ScrollAnimation duration='8' animateIn='fadeIn'>
+        <ScrollAnimation duration='2' animateIn='fadeIn'>
           <ImageAvatars />
         </ScrollAnimation>
 
@@ -64,7 +69,7 @@ function ButtonAppBar () {
               I love to build
             </Typography>
             <Typography align='center' paragraph variant='h6'>
-              www.heindrickcheung.website
+              heindrickcheung.website
             </Typography>
             <Typography align='center' paragraph variant='p'>
               I am a software engineer based in San Francisco, CA specializing
@@ -74,10 +79,19 @@ function ButtonAppBar () {
         </Container>
 
         <Container maxWidth='xs'>
-          <ScrollAnimation duration='12' animateIn='fadeIn'>
+          <ScrollAnimation duration='3' animateIn='fadeIn'>
             <Grid container spacing={2}>
               <Hidden only={['xs']}>
-                <Grid item xs>
+                <Grid
+                  item
+                  xs
+                  onClick={e =>
+                    window.open(
+                      'http://www.linkedin.com/in/heindrick-cheung',
+                      '_blank'
+                    )
+                  }
+                >
                   <svg
                     className={classes.svg}
                     role='img'
@@ -90,7 +104,16 @@ function ButtonAppBar () {
                 </Grid>
               </Hidden>
               <Hidden only={['xs']}>
-                <Grid item xs>
+                <Grid
+                  item
+                  xs
+                  onClick={e =>
+                    window.open(
+                      'http://www.twitter.com/@heindrickcheung',
+                      '_blank'
+                    )
+                  }
+                >
                   <svg
                     className={classes.svg}
                     role='img'
@@ -104,7 +127,16 @@ function ButtonAppBar () {
               </Hidden>
 
               <Hidden only={['xs']}>
-                <Grid item xs>
+                <Grid
+                  item
+                  xs
+                  onClick={e =>
+                    window.open(
+                      'http://www.facebook.com/heindrick.cheung',
+                      '_blank'
+                    )
+                  }
+                >
                   <svg
                     className={classes.svg}
                     role='img'
@@ -117,7 +149,16 @@ function ButtonAppBar () {
                 </Grid>
               </Hidden>
               <Hidden only={['xs']}>
-                <Grid item xs>
+                <Grid
+                  item
+                  xs
+                  onClick={e =>
+                    window.open(
+                      'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hcheung01@mail.com',
+                      '_blank'
+                    )
+                  }
+                >
                   <svg
                     className={classes.svg}
                     role='img'
@@ -130,7 +171,16 @@ function ButtonAppBar () {
                 </Grid>
               </Hidden>
               <Hidden only={['xs']}>
-                <Grid item xs>
+                <Grid
+                  item
+                  xs
+                  onClick={e =>
+                    window.open(
+                      'https://www.medium.com/@heindrickcheung',
+                      '_blank'
+                    )
+                  }
+                >
                   <svg
                     className={classes.svg}
                     role='img'
@@ -143,7 +193,16 @@ function ButtonAppBar () {
                 </Grid>
               </Hidden>
               <Hidden only={['xs']}>
-                <Grid item xs>
+                <Grid
+                  item
+                  xs
+                  onClick={e =>
+                    window.open(
+                      'https://www.github.com/hcheung01',
+                      '_blank'
+                    )
+                  }
+                >
                   <svg
                     className={classes.svg}
                     role='img'

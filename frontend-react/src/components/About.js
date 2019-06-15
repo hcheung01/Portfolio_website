@@ -36,25 +36,32 @@ function About () {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Container className={classes.root} maxWidth='md'>
-        <Box>
-          <Paper className={classes.paper}>
-            <Typography variant='h4' component='h3'>
-              About Me
-            </Typography>
-            <Typography component='p'>
-              <br />
-              Hello, welcome to my portfolio! I'm Heindrick, an employable
-              Software Engineer who recently completed a projects based 9 months
-              Full Stack curriculum at Holberton School in San Francisco.
-              After completion, I continued learning by building interesting and
-              meaningful projects. This Full-stack portfolio
-              is designed using React.js + Material-UI for the frontend and Python + Flask + SQLAlchemy + MySQL for the RESTful backend.
-              Please explore the different pages here, especially the API documentation page!
-            </Typography>
-          </Paper>
-        </Box>
-      </Container>
+      <ScrollAnimation duration='4' animateIn='fadeIn'>
+        <Container className={classes.root} maxWidth='md'>
+          <Box>
+            <Paper className={classes.paper}>
+              <Typography variant='h4' component='h3'>
+                About Me
+              </Typography>
+              <Typography component='p'>
+                <br />
+                Hello, welcome to my site! I'm Heindrick, a software engineer
+                who recently completed a formal education on 9 months of
+                projects based Full Stack curriculum at Holberton School in
+                San Francisco. My passion in programming is building web
+                applications, analyzing and processing data. After completion,
+                I continued learning by building interesting and meaningful
+                projects. Please explore the different pages here, especially
+                the API documentation page! I will continue building fun component projects to integrate with this site. Please come back to play with the new features!!! <br />
+                <br />
+                This site designed with:
+                <br />
+                React.js | Material-UI | Javascript | Python3 | Flask | SQLAlchemy | MySQL | Devicons
+              </Typography>
+            </Paper>
+          </Box>
+        </Container>
+      </ScrollAnimation>
     </React.Fragment>
   );
 }

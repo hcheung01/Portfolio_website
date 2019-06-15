@@ -13,7 +13,6 @@ import TechStack from './components/techstack';
 class App extends Component {
   render () {
     return (
-
       <div className='App' style={{ background: '#121212' }}>
         <header className='App-header'>
           <Router>
@@ -21,16 +20,21 @@ class App extends Component {
             <div>
               <Fade>
                 <Switch>
-                  <Route exact path='/' to='/home' />
+                  <Route from='/home' to='/about' />
                   <Route exact path='/resume' component={MyDocument} />
-                  <Route exact path='/yourinformation' component={MainInfo} />
-                  <Redirect from='/apidocumentation' to='apidoc' />
-                  <Route exact path='/apidoc' component={APIdoc} />
+                  <Route
+                    exact
+                    path='/yourinformation'
+                    component={MainInfo}
+                  />
+                  <Route exact path='/about' component={About} />
+                  <Route exact path='/techstacks' component={TechStack} />
+
+                  <Redirect from='/apidocumentation' to='api/documentation' />
+                  <Route exact path='/api/documentation' component={APIdoc} />
                 </Switch>
               </Fade>
             </div>
-            <About />
-            <TechStack />
           </Router>
         </header>
 

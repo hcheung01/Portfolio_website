@@ -17,7 +17,9 @@ import { ListItem } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   card: {
-    maxWidth: 400
+    maxWidth: 400,
+    background: '#292929',
+    color: '#3F51B5'
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -31,6 +33,9 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     backgroundColor: red[500]
+  },
+  textColor: {
+    color: '#3F51B5'
   }
 }));
 
@@ -49,25 +54,30 @@ function InfoItem (props) {
             <IconButton
               onClick={props.handleDelete.bind(this, props.info.id)}
             >
-              <DeleteIcon />
+              <DeleteIcon className={classes.textColor} />
             </IconButton>
           }
           title={props.info.name}
-          subheader={props.info.title + ', ' + props.info.company}
+          // subheader={props.info.title + ', ' + props.info.company}
         />
         <CardContent>
-          <Typography variant='body2' color='textSecondary' component='p'>
+          <Typography variant='body2' color='inherit' component='p'>
+            {'Title: ' + props.info.title + ', ' + props.info.company}
+          </Typography>
+        </CardContent>
+        <CardContent>
+          <Typography variant='body2' color='inherit' component='p'>
             {props.info.created_at}
           </Typography>
-          <Typography variant='body2' color='textSecondary' component='p'>
+          <Typography variant='body2' color='inherit' component='p'>
             {'POST ID# - ' + props.info.id}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label='Add to favorites'>
+          <IconButton color='inherit' aria-label='Add to favorites'>
             <FavoriteIcon />
           </IconButton>
-          <IconButton aria-label='Share'>
+          <IconButton color='inherit' aria-label='Share'>
             <ShareIcon />
           </IconButton>
           <IconButton
@@ -77,6 +87,7 @@ function InfoItem (props) {
             onClick={handleExpandClick}
             aria-expanded={expanded}
             aria-label='Show more'
+            color='inherit'
           >
             <ExpandMoreIcon />
           </IconButton>
@@ -84,7 +95,9 @@ function InfoItem (props) {
 
         <Collapse in={expanded} timeout='auto' unmountOnExit>
           <CardContent>
-            <Typography paragraph>{'note: ' + props.info.note}</Typography>
+            <Typography color='inherit' paragraph>
+              {'note: ' + props.info.note}
+            </Typography>
           </CardContent>
         </Collapse>
       </Card>

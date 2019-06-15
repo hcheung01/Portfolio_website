@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/styles';
+import { spacing } from '@material-ui/system';
+import { createMuiTheme } from '@material-ui/core/styles';
 
-const formStyle = {
-  main: {
+// const formStyle = {
+//   main: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     maxWidth: 260,
+//     marginLeft: '1%'
+//   },
+//   input: {
+//     background: '#292929'
+//   }
+// };
+// const theme = createMuiTheme({
+//   spacing: 2
+// });
+
+const styles = theme => ({
+  container: {
     display: 'flex',
-    flexDirection: 'column',
-    maxWidth: 260,
-    marginLeft: '1%'
+    flexWrap: 'wrap',
+    background: '#292929',
+    justifyContent: 'center',
+    margin: '5%',
+    borderRadius: '5px',
+    padding: '2%'
   },
-  input: {
-    background: '#292929'
+  textField: {
+    color: '#3F51B5',
+    margin: '2%'
   }
-
-};
+});
 class InfoForm extends Component {
   constructor (props) {
     super(props);
@@ -77,57 +98,57 @@ class InfoForm extends Component {
     }
   }
   render () {
+    const { classes } = this.props;
     return (
-      <form style={formStyle.main} onSubmit={this.handleSubmit}>
+      <form className={classes.container} onSubmit={this.handleSubmit}>
         <TextField
           label='name'
           onChange={e => this.setState({ name: e.target.value })}
           margin='normal'
           variant='outlined'
-          style={formStyle.input}
+          className={classes.textField}
         />
         <TextField
           label='title'
           onChange={e => this.setState({ title: e.target.value })}
           margin='normal'
           variant='outlined'
-          style={formStyle.input}
-
+          className={classes.textField}
         />
         <TextField
           label='company'
           onChange={e => this.setState({ company: e.target.value })}
           margin='normal'
           variant='outlined'
-          style={formStyle.input}
+          className={classes.textField}
         />
         <TextField
           label='email'
           onChange={e => this.setState({ email: e.target.value })}
           margin='normal'
           variant='outlined'
-          style={formStyle.input}
+          className={classes.textField}
         />
         <TextField
           label='phone'
           onChange={e => this.setState({ phone: e.target.value })}
           margin='normal'
           variant='outlined'
-          style={formStyle.input}
+          className={classes.textField}
         />
         <TextField
           label='note'
           onChange={e => this.setState({ note: e.target.value })}
           margin='normal'
           variant='outlined'
-          style={formStyle.input}
+          className={classes.textField}
         />
         <TextField
           label='id'
           onChange={e => this.setState({ id: e.target.value })}
           margin='normal'
           variant='outlined'
-          style={formStyle.input}
+          className={classes.textField}
         />
         <Button
           variant='outlined'
@@ -135,7 +156,7 @@ class InfoForm extends Component {
           style={{ margin: 'spacing(1)' }}
           size='large'
           onClick={this.handleSubmit}
-          style={formStyle.input}
+          className={classes.textField}
         >
           Upload your info!!
         </Button>
@@ -144,4 +165,4 @@ class InfoForm extends Component {
   }
 }
 
-export default InfoForm;
+export default withStyles(styles)(InfoForm);

@@ -2,15 +2,9 @@ import React, { Component } from 'react';
 import InfoItem from './infoItem';
 import PropTypes from 'prop-types';
 import List from '@material-ui/core/List';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 
-const theStyle = {
-  width: '90%',
-  maxWidth: '100%',
-  display: 'flex',
-  // justifyContent: 'space-around',
-  flexWrap: 'wrap',
-  overflow: 'hidden'
-};
 class Infos extends Component {
   constructor (props) {
     super(props);
@@ -29,9 +23,16 @@ class Infos extends Component {
   }
   render () {
     return this.props.infos.map((info, index) => (
-      <List dense style={theStyle}>
-        <InfoItem handleDelete={this.handleDelete} info={info} />
-      </List>
+      <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth='lg'>
+          <List
+            dense
+          >
+            <InfoItem handleDelete={this.handleDelete} info={info} />
+          </List>
+        </Container>
+      </React.Fragment>
     ));
   }
 }
