@@ -1,15 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import HomeIcon from '@material-ui/icons/Home';
-import Hidden from '@material-ui/core/Hidden';
-import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
-
 import CssBaseline from '@material-ui/core/CssBaseline';
 import React from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -36,7 +29,7 @@ function About () {
   return (
     <React.Fragment>
       <CssBaseline />
-      <ScrollAnimation duration='4' animateIn='fadeIn'>
+      <ScrollAnimation duration={4} animateIn='fadeIn'>
         <Container className={classes.root} maxWidth='md'>
           <Box>
             <Paper className={classes.paper}>

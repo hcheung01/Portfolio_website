@@ -2,23 +2,6 @@ import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/styles';
-import { spacing } from '@material-ui/system';
-import { createMuiTheme } from '@material-ui/core/styles';
-
-// const formStyle = {
-//   main: {
-//     display: 'flex',
-//     flexDirection: 'column',
-//     maxWidth: 260,
-//     marginLeft: '1%'
-//   },
-//   input: {
-//     background: '#292929'
-//   }
-// };
-// const theme = createMuiTheme({
-//   spacing: 2
-// });
 
 const styles = theme => ({
   container: {
@@ -83,7 +66,6 @@ class InfoForm extends Component {
         this.props.getInfo();
       });
     } else if (this.state.name && this.state.title && this.state.id) {
-      console.log(this.state);
       fetch('/api/info/' + this.state.id, {
         method: 'PUT',
         body: JSON.stringify(this.state),

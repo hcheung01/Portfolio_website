@@ -35,11 +35,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const url = {
-  url1: 'www.google.com',
-  url2: 'www.linkedin.com/heindrick-cheung'
-};
-
 function ButtonAppBar () {
   const classes = useStyles();
 
@@ -54,14 +49,14 @@ function ButtonAppBar () {
           <Button color='inherit' className={classes.text} href='/home'>
             Home
           </Button>
-          <HomeIcon img href='/home' />
+          <HomeIcon href='/home' />
         </Toolbar>
-        <ScrollAnimation duration='2' animateIn='fadeIn'>
+        <ScrollAnimation duration={2} animateIn='fadeIn'>
           <ImageAvatars />
         </ScrollAnimation>
 
         <Container className={classes.text} maxWidth='md'>
-          <ScrollAnimation delay='8' duration='8' animateIn='fadeIn'>
+          <ScrollAnimation duration={5} animateIn='fadeIn'>
             <Typography align='center' paragraph variant='h2'>
               HEINDRICK CHEUNG
             </Typography>
@@ -71,7 +66,7 @@ function ButtonAppBar () {
             <Typography align='center' paragraph variant='h6'>
               heindrickcheung.website
             </Typography>
-            <Typography align='center' paragraph variant='p'>
+            <Typography align='center' paragraph variant='subtitle1'>
               I am a software engineer based in San Francisco, CA specializing
               in web developments and applications
             </Typography>
@@ -79,7 +74,7 @@ function ButtonAppBar () {
         </Container>
 
         <Container maxWidth='xs'>
-          <ScrollAnimation duration='3' animateIn='fadeIn'>
+          <ScrollAnimation duration={5} animateIn='fadeIn'>
             <Grid container spacing={2}>
               <Hidden only={['xs']}>
                 <Grid

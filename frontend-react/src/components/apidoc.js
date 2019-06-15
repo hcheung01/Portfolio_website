@@ -24,7 +24,7 @@ class APIdoc extends Component {
   render () {
     return (
       <React.Fragment>
-        <Container maxWidth='mD'>
+        <Container maxWidth='md'>
           <Typography variant='h3' component='h2' style={styles.title}>
             INTERACT DIRECTLY TO THE API
           </Typography>

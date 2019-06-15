@@ -39,7 +39,7 @@ function TechStack () {
 
   return (
     <div className={classes.root}>
-      <ScrollAnimation duration='4' animateIn='fadeIn'>
+      <ScrollAnimation duration={4} animateIn='fadeIn'>
         <Hidden only={['xs']}>
           {' '}
           <Typography variant='h4' className={classes.tech} component='h3'>
