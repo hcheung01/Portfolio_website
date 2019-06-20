@@ -1,7 +1,7 @@
 from sqlalchemy.orm import sessionmaker, Session, scoped_session
 from sqlalchemy import create_engine
 from sqlalchemy_utils import database_exists, create_database
-from backend.model.user import User, Base
+from model.user import User, Base
 import json
 import os
 
@@ -15,11 +15,11 @@ class Dbstorage:
         """
         self.__engine = create_engine(
             'mysql+pymysql://{}:{}@{}:{}/{}'.format(
-                os.environ.get('PROFILE_USER'),
-                os.environ.get('PROFILE_PASSWORD'),
-                os.environ.get('PROFILE_HOST'),
-                os.environ.get('PROFILE_PORT'),
-                os.environ.get('PROFILE_DATABASE')
+                os.environ.get('DB_USER'),
+                os.environ.get('DB_PASSWORD'),
+                os.environ.get('DB_HOST'),
+                os.environ.get('DB_PORT'),
+                os.environ.get('DB_DATABASE')
             )
         )
         if not database_exists(self.__engine.url):

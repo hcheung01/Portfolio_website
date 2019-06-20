@@ -18,11 +18,11 @@
 ```/usr/local/mysql/bin/mysql -uroot -p```
 
 #### How to start API/Backend
-```PROFILE_USER=root PROFILE_PASSWORD=root PROFILE_HOST=localhost PROFILE_PORT=3306 PROFILE_DATABASE=user python3 -m backend.api.app```
+```DB_USER=root DB_PASSWORD=root DB_HOST=localhost DB_PORT=3306 DB_DATABASE=user python3 -m api.app```
 
 ### API
 
-#### Retrieve my profile information in JSON format instead of resume download
+#### Retrieve my DB information in JSON format instead of resume download
 `GET  /api/myinfo`
 
 #### Retrieve all outside posted contact information

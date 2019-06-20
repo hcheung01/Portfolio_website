@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-from backend.api.views import app_views
+from api.views import app_views
 from flask import jsonify, request, url_for, redirect, abort
 import json
-from backend.model import storage
+from model import storage
 from flask_cors import CORS, cross_origin
 
 @app_views.route('/allinfo', methods=['GET', 'POST'])
