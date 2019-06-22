@@ -1,34 +1,35 @@
-version: '3.5'
+version: "3.5"
 
 services:
   db:
-    container_name: db
-    image: mysql:5.7
-    expose: 3306
-    ports:
-      - "3306:3306"
+    image: mysql:8.0
+    volumes:
+      - mysql:/var/lib/mysql
+    env_file: .env
+    healthcheck:
+      test: "mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD -e 'SELECT 1' $$MYSQL_DATABASE"
+      interval: 3s
+      timeout: 1s
+      retries: 5
+
   server:
-    container_name: server
-    build: ./backend
+    image: portfolio-server
+    build:
+      context: ./backend
     ports:
       - "3001:3001"
-    volumes:
-      - ./backend:/usr/src/app
-    environment:
-      - PROFILE_USER=root
-      - PROFILE_PASSWORD=root
-      - PROFILE_HOST=localhost
-      - PROFILE_PORT=3306
-      - PROFILE_DATABASE=user
+    env_file: .env
     depends_on:
       - db
+
   client:
-    container_name: client
-    build: ./frontend-react
-    env_file: .env
+    image: portfolio-client
+    build:
+      context: ./frontend-react
     ports:
-      - "3000:3000"
-    volumes: 
-      - ./frontend-react:/usr/src/app
-    depends_on: 
+      - "3000:80"
+    depends_on:
       - server
+
+volumes:
+  mysql:
