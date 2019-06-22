@@ -15,11 +15,11 @@ class Dbstorage:
         """
         self.__engine = create_engine(
             'mysql+pymysql://{}:{}@{}:{}/{}'.format(
-                os.environ.get('DB_USER'),
-                os.environ.get('DB_PASSWORD'),
-                os.environ.get('DB_HOST'),
-                os.environ.get('DB_PORT'),
-                os.environ.get('DB_DATABASE')
+                os.environ.get('MYSQL_USER'),
+                os.environ.get('MYSQL_PASSWORD'),
+                os.environ.get('MYSQL_HOST'),
+                os.environ.get('MYSQL_PORT', 3306),
+                os.environ.get('MYSQL_DATABASE')
             )
         )
         if not database_exists(self.__engine.url):
