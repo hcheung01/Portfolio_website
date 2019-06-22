@@ -1,11 +1,10 @@
-FROM node:latest
+FROM node:12-stretch-slim AS build-env
 
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-EXPOSE 3000
-COPY package.json /usr/src/app
-
+ADD package*.json ./
 RUN npm install
+ADD . ./
+RUN npm run-script build
 
-CMD ["npm", "start"]
-
+FROM nginx:1.16-alpine
+COPY --from=build-env /usr/src/app/build /usr/share/nginx/html
