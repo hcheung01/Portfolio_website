@@ -1,12 +1,9 @@
-FROM python:3.7.3
+FROM python:3.7-stretch
 
-RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-EXPOSE 3001
-COPY requirements.txt /usr/src/app
-
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
+COPY . ./
 
-COPY . /usr/src/app
-
-CMD ["python3", "-m", "backend.api.app"]
+EXPOSE 3001
+CMD python3 -m api.app
