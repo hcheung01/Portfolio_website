@@ -54,7 +54,7 @@ class InfoForm extends Component {
 
     if (this.state.name && this.state.title && !this.state.id) {
       delete this.state.id;
-      fetch('/allinfo', {
+      fetch('http://0.0.0.0:3001/api/allinfo', {
         method: 'POST',
         body: JSON.stringify(this.state),
         headers: {
@@ -66,7 +66,7 @@ class InfoForm extends Component {
         this.props.getInfo();
       });
     } else if (this.state.name && this.state.title && this.state.id) {
-      fetch('/api/info/' + this.state.id, {
+      fetch('http://0.0.0.0:3001/api/info/' + this.state.id, {
         method: 'PUT',
         body: JSON.stringify(this.state),
         headers: {

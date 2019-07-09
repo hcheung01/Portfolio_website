@@ -28,7 +28,7 @@ class App extends Component {
     this.getInfo();
   }
   getInfo = () => {
-    fetch("/allinfo")
+    fetch("http://0.0.0.0:3001/api/allinfo")
       .then(response => response.json())
       .then(data =>
         this.setState({

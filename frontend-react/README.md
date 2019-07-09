@@ -82,3 +82,7 @@ You may serve it with a static server:
 Find out more about deployment here:
 
   https://bit.ly/CRA-deploy
+
+```
+  "proxy": "http://server:3001/api
+```

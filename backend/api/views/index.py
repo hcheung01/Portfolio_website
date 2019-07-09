@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-from backend.api.views import app_views
+from api.views import app_views
 from flask import jsonify, request
+
 
 
 

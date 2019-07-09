@@ -25,4 +25,8 @@ import Icon from '@material-ui/core/Icon';
 
 <Icon>star</Icon>
 ```
-
+DB_USER=root
+DB_PASSWORD=root
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=user

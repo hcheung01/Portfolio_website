@@ -11,7 +11,7 @@ class Infos extends Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   handleDelete (id) {
-    fetch('/info/' + id, {
+    fetch('http://0.0.0.0:3001/api/info/' + id, {
       method: 'DELETE'
     })
       .then(results => {

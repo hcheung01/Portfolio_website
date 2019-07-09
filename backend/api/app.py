@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from backend.api.views import app_views
+from api.views import app_views
 from flask import Flask, jsonify, make_response, render_template, url_for
 from flask_cors import CORS, cross_origin
 from werkzeug.exceptions import HTTPException
@@ -67,7 +67,9 @@ if __name__ == "__main__":
     """
     MAIN Flask App
     """
+    app.run(host='0.0.0.0', port='3001')
+
     # initializes global error handling
     # setup_global_errors()
     # start Flask app
-    app.run(host='localhost', port='3001', debug=True)
+    # app.run(host='localhost', port='3001', debug=True)

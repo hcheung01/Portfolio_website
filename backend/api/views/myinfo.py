@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from flask import jsonify, request
-from backend.api.views import app_views
+from api.views import app_views
 
 @app_views.route('/myinfo', methods=['GET'])
 def myinfo():
