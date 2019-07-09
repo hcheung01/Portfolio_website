@@ -18,7 +18,7 @@
 ```/usr/local/mysql/bin/mysql -uroot -p```
 
 #### How to start API/Backend
-```DB_USER=root DB_PASSWORD=root DB_HOST=localhost DB_PORT=3306 DB_DATABASE=user python3 -m api.app```
+```MYSQL_USER=root MYSQL_PASSWORD=root MYSQL_HOST=localhost MYSQL_PORT=3306 MYSQL_DATABASE=user python3 -m api.app```
 
 ### API
 

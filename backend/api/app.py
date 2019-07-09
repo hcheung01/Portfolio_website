@@ -16,6 +16,8 @@ app.register_blueprint(app_views)
 
 # host = os.getenv('PROFILE_HOST', '0.0.0.0')
 # port = os.getenv('PROFILE_PORT', 5000)
+host = os.getenv('PROFILE_HOST', '0.0.0.0')
+port = os.getenv('PROFILE_PORT', 5000)
 
 @app.errorhandler(404)
 def handle_404(exception):
@@ -67,7 +69,9 @@ if __name__ == "__main__":
     """
     MAIN Flask App
     """
-    app.run(host='0.0.0.0', port='3001')
+    app.run(host=host, port=port)
+
+    # app.run(host='0.0.0.0', port='3001')
 
     # initializes global error handling
     # setup_global_errors()
