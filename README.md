@@ -1,32 +1,25 @@
-# FLASK REACT PORTFOLIO SITE
----
-## Frontend
+# PORTFOLIO SITE
 ---
 ## Stack
-* React
+* React.js
+* Material UI
 * HTML
 * CSS
 * Javascript
-* jQuery
+* Node.js
+* SQL
+* MySQL 8.0
+* Flask
+* SQLAlchemy
+* Docker - orchestration
+* AWS
+* Linux
+* Nginx
+* uwsgi
+* Postman
+* Visual Studios
+* Git
+
+
 
 ```
-npx create-react-app frontend-react
-npm install @material-ui/core@next
-npm install typeface-roboto --save
-  import 'typeface-roboto';
-
-npm install --save react-router-dom history
-```
-
-```
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-
-import Icon from '@material-ui/core/Icon';
-
-<Icon>star</Icon>
-```
-DB_USER=root
-DB_PASSWORD=root
-DB_HOST=localhost
-DB_PORT=3306
-DB_DATABASE=user
