@@ -27,6 +27,7 @@ services:
       
   client:
     image: portfolio-client
+    restart: always
     build:
       context: ./frontend-react
     ports:
