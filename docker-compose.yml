@@ -30,6 +30,7 @@ services:
     restart: always
     build:
       context: ./frontend-react
+    network_mode: host
     ports:
       - "3000:80"
     depends_on:
