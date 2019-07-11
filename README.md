@@ -1,6 +1,7 @@
 # PORTFOLIO SITE
 ---
-## Stack
+## Stack | Languages | Technologies | Tools
+--
 * React.js
 * Material UI
 * HTML
