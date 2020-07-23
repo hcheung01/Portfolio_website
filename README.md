@@ -18,8 +18,7 @@
 * Nginx
 * uwsgi
 * Postman
-* Visual Studios
-* Git
+* Visual Studio Code
 
 
 
