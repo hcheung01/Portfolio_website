@@ -3,7 +3,7 @@ chardet==3.0.4
 Click==7.0
 dbapi==0.0.13
 Flask==1.0.2
-Flask-Cors==3.0.7
+Flask-Cors==3.0.9
 get==2019.4.13
 idna==2.8
 itsdangerous==1.1.0
